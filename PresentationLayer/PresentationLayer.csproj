@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4257DF2E-352B-4564-91FA-12131A1DE3FB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PresentationLayer</RootNamespace>
+    <AssemblyName>PresentationLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthorMenu.Designer.cs">
+      <DependentUpon>AuthorMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookMenu.Designer.cs">
+      <DependentUpon>BookMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenreMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenreMenu.Designer.cs">
+      <DependentUpon>GenreMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibraryMenu.Designer.cs">
+      <DependentUpon>LibraryMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderMenu.Designer.cs">
+      <DependentUpon>OrderMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AuthorMenu.resx">
+      <DependentUpon>AuthorMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookMenu.resx">
+      <DependentUpon>BookMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenreMenu.resx">
+      <DependentUpon>GenreMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibraryMenu.resx">
+      <DependentUpon>LibraryMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderMenu.resx">
+      <DependentUpon>OrderMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{9689c3aa-3d3f-4f89-b055-034084c0f332}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj">
+      <Project>{5ada3e99-a2d2-442e-a9bd-7a1436ce66c7}</Project>
+      <Name>ServiceLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
